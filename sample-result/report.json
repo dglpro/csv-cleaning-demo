@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "keys": [
+    "客户编号"
+  ],
+  "headers": [
+    "客户编号",
+    "姓名",
+    "电话",
+    "城市",
+    "备注"
+  ],
+  "summary": {
+    "inputRecords": 8,
+    "outputRecords": 3,
+    "duplicateRecords": 1,
+    "conflictKeys": 1,
+    "conflictRecords": 2,
+    "rejectedRecords": 1,
+    "blankRecords": 1,
+    "trimmedRecords": 1
+  },
+  "duplicates": [
+    {
+      "source": "samples/customers-b.csv",
+      "record": 2,
+      "values": [
+        "0001",
+        "张一",
+        "013000000001",
+        "北京",
+        "第一行\n第二行"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "key": {
+        "客户编号": "0003"
+      },
+      "records": [
+        {
+          "source": "samples/customers-a.csv",
+          "record": 4,
+          "values": [
+            "0003",
+            "王三",
+            "013000000003",
+            "广州",
+            "需要复核城市"
+          ]
+        },
+        {
+          "source": "samples/customers-b.csv",
+          "record": 3,
+          "values": [
+            "0003",
+            "王三",
+            "013000000003",
+            "深圳",
+            "需要复核城市"
+          ]
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "source": "samples/customers-a.csv",
+      "record": 5,
+      "reason": "必填值为空：姓名",
+      "values": [
+        "0005",
+        "",
+        "013000000005",
+        "成都",
+        "姓名缺失"
+      ]
+    }
+  ],
+  "blankRows": [
+    {
+      "source": "samples/customers-a.csv",
+      "record": 6
+    }
+  ],
+  "trimmed": [
+    {
+      "source": "samples/customers-a.csv",
+      "record": 2
+    }
+  ]
+}
