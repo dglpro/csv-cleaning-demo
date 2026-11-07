@@ -1,0 +1,29 @@
+name: 表格处理需求
+description: 说明你的文件与处理规则，按范围确认报价。
+title: "[需求] "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: 想整理成什么样？
+      placeholder: 例如：把两个月的客户表合并，按编号去重，列出电话不一致的记录。
+    validations:
+      required: true
+  - type: input
+    id: scale
+    attributes:
+      label: 文件格式、数量和大致记录数
+      placeholder: 例如：3 个 CSV，每个约 5000 行。
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: 脱敏样本与预期结果
+      description: 这里是公开页面，请用虚构数据或脱敏样本。
+    validations:
+      required: true
+  - type: input
+    id: delivery
+    attributes:
+      label: 预算与期望交付时间
